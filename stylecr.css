@@ -216,35 +216,46 @@ h2{
     padding-top: 20px;
     letter-spacing: 1px; 
 }
-@media (max-width: 768px) {
-    /* تجعل القائمة (nav) تظهر بشكل طولي بدلاً من عرضي */
+/* هذا الكود سيطبق فقط على الشاشات الصغيرة */
+@media screen and (max-width: 600px) {
+    
+    /* 1. ضبط الـ Header والروابط */
     nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        display: flex !important;
+        flex-direction: column !important; /* ترتيب الروابط عمودياً */
+        padding: 0 !important;
+        text-align: center !important;
     }
 
-    /* ضبط النصوص لتناسب الشاشة الصغيرة */
-    h1 {
-        font-size: 24px; /* تصغير حجم العنوان الرئيسي */
-        text-align: center;
+    nav ul li {
+        margin: 5px 0 !important;
     }
 
-    p {
-        font-size: 16px;
-        padding: 0 15px; /* ترك مسافة من الجوانب */
-        text-align: center;
-    }
-
-    /* ضبط قسم الخدمات (Services) */
-    .services-container { /* استبدل هذا الاسم باسم الكلاس الموجود عندك */
-        display: flex;
-        flex-direction: column; /* جعل الصور والنصوص تحت بعضها */
-        align-items: center;
+    /* 2. ضبط قسم الخدمات (الصورة والنص) */
+    /* افترضت أن الكلاس المسؤول عن الحاوية هو شيء يشبه .service-box */
+    section, .container, div { 
+        display: block !important; /* إلغاء العرض الجانبي */
+        width: 100% !important;
+        padding: 10px !important;
     }
 
     img {
-        max-width: 90%; /* منع الصور من الخروج عن حدود الشاشة */
+        width: 100% !important; /* الصورة تأخذ عرض الشاشة */
+        max-width: 350px;
+        height: auto !important;
+        display: block !important;
+        margin: 0 auto 20px !important; /* تتوسط الشاشة */
+    }
+
+    /* 3. تصغير العناوين لتناسب الهاتف */
+    h1 {
+        font-size: 28px !important;
+    }
+    
+    h2 {
+        font-size: 22px !important;
+    }
+}
         height: auto;
     }
 }
