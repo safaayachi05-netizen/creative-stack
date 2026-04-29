@@ -258,42 +258,6 @@ h2{
         flex-direction: column;
         align-items: center;
         padding: 20px;
-        gap: 15px;
-    }
-
-    nav ul {
-        padding: 0;
-        gap: 10px;
-        font-size: 14px;
-    }
-
-    /* تصغير حجم العناوين لتناسب الشاشة الصغيرة */
-    .content h1 {
-        font-size: 26px;
-    }
-
-    /* جعل الكروت (Projects) تأخذ العرض الكامل وتترتب فوق بعضها */
-    services-conainer {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-
-    /* تعديل الـ Footer */
-    footer ul {
-        flex-direction: column;
-        align-items: center;
         gap: 10px;
     }
-}
 
-/* للهواتف الصغيرة جداً (أقل من 480 بكسل) */
-@media (max-width: 480px) {
-    .content .btn-project {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-    
-    .container {
-        padding: 10px;
-    }
-}
