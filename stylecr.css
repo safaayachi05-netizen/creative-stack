@@ -1,0 +1,265 @@
+@charset "UTF-8"
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+/*start header*/
+header {
+    min-height: 60vh;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    background-size: cover;
+    background-position: center;
+    position: relative; /* ضروري لكي يعمل التموضع المطلق للـ nav */
+    display: flex;
+    align-items: center; /* لتوسط المحتوى (content) عمودياً */
+    justify-content: flex-start; /* ليكون المحتوى جهة اليسار */
+        background: radial-gradient(circle at center,#2c2c2c 0%,#000 70%);
+}
+
+nav {
+    position: absolute;
+    top: 20px;          /* المسافة من الأعلى */
+    left: 20%;          /* تحريك بداية الـ nav لمنتصف الشاشة */
+    transform: translateX(-50%); /* إزاحة للوراء بنسبة 50% لضبط التوسط تماماً */
+    z-index: 10;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    margin: 0; 
+    padding: 10px 25px;
+    border-radius: 20px; /* لمسة جمالية للقائمة البيضاء */
+}
+
+nav ul li a {
+    color: rgb(0, 196, 0);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+nav ul :hover{
+    text-decoration: underline;
+}
+
+.content {
+    margin-top: 40px;
+    position: relative;
+    z-index: 2;
+    text-align: left; /* المحتوى لليسار */
+    padding-left: 3%; /* لإعطاء مسافة عن حافة الشاشة اليسرى */
+    max-width: 600px;
+}
+
+.content h1 {
+    font-size: 35px;
+    margin-bottom: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.content p {
+    font-size: 15px;
+    margin-bottom: 30px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.content .btn-project{
+    display: inline-block;
+    color:  rgb(0, 196, 0);
+    transition: 0.3s;
+}
+.content .btn-project:hover{
+   color:rgb(0, 127, 0);
+}
+/* أضيفي هذا لضبط تموضع الشعار في الأسفل واليمين */
+.footer-logo {
+    position: absolute;
+    bottom: 8px; /* مسافة من الأسفل */
+    right: 2px;  /* مسافة من اليمين */
+}
+.footer-logo img {
+    height: 100px; /* ضبط ارتفاع الشعار ليناسب المساحة */
+    width: auto;
+    opacity: 0.8; /* جعل الشعار أكثر نعومة واندماجاً */
+}
+
+/* --- تنسيق عام لقسم الخدمات --- */
+h2{
+    text-align: center;
+}
+.About{
+    text-align: center;
+}
+.About p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.services-conainer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* التنسيق الأساسي لكل بلوكات الخدمات */
+.services-block, 
+.services-block-alt, 
+.services-block-service {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 80px; /* مسافة بين كل خدمة وأخرى */
+    gap: 50px;
+     background-color: #f9f9f9;
+}
+
+/* --- هنا السحر: البلوك الثاني نجعله معكوساً --- */
+.services-block-alt {
+    flex-direction: row-reverse;
+}
+
+/* --- تنسيق الصور --- */
+.services-image {
+    flex: 1;
+    max-width: 50%;
+}
+
+.services-image img {
+    width: 100%;
+    height: 450px; /* ارتفاع ثابت لجمالية العرض */
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* --- تنسيق النصوص --- */
+.services-details {
+    flex: 1;
+    max-width: 45%;
+
+}
+
+.services-details p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 25px;
+}
+.services-details h3{
+    text-decoration: underline;
+}
+
+.btn-services {
+    display: inline-block;
+    padding: 10px 35px;
+    border: 1px solid #111;
+    color: #111;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.btn-services:hover {
+    background: #111;
+    color: #fff;
+}
+.review-card {
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: #fff;
+}
+
+/* التنسيق الأساسي لجعل الاسم والتاريخ في سطر واحد */
+.review-header {
+    display: flex;
+    justify-content: space-between; /* يضع الاسم في أقصى اليمين والتاريخ في أقصى اليسار */
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.customer-name {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.review-date {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.stars {
+    color: #f1c40f; /* لون النجوم الذهبي */
+    margin-bottom: 10px;
+}
+
+.review-text {
+    font-style: italic;
+    color: #555;
+    line-height: 1.6;
+}
+.footer-icons {
+    display: flex;
+    gap: 40px; /* المسافة بين كل أيقونة وأخرى */
+    justify-content: center;
+    padding: 20px;
+}
+
+.icon-item {
+    display: flex;
+    flex-direction: column; /* لجعل النص تحت الأيقونة */
+    align-items: center;
+    text-decoration: none; /* إزالة الخط تحت الرابط */
+    color: #333;
+    transition: transform 0.3s ease; /* إضافة حركة ناعمة */
+}
+
+/* تأثير عند تمرير الماوس (Hover) */
+.icon-item:hover {
+    transform: translateY(-5px); /* رفع الأيقونة قليلاً للأعلى */
+    color: rgb(0, 196, 0); /* تغيير اللون عند التمرير */
+}
+
+.icon-item i {
+    font-size: 24px; /* حجم الأيقونة */
+    margin-bottom: 8px; /* مسافة بين الأيقونة والنص */
+}
+
+.icon-item p {
+    margin: 0; /* إزالة الهوامش التلقائية للفقرة */
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.copyright-text {
+    text-align: center;
+    margin-top: 40px; /* مسافة كافية تفصله عن الأيقونات */
+    font-size: 0.85rem;
+    color: #888;
+    border-top: 1px solid #eee; /* خط فاصل خفيف لإعطاء مظهر رسمي */
+    padding-top: 20px;
+    letter-spacing: 1px; /* يعطي جمالية للنص الإنجليزي */
+}
+
+/* --- جعل التصميم متجاوب مع الموبايل --- */
+@media (max-width: 768px) {
+    .services-block, 
+    .services-block-alt, 
+    .services-block-service {
+        flex-direction: column !important; /* الكل يصبح فوق بعض في الهاتف */
+        text-align: center;
+    }
+    
+    .services-image, .services-details {
+        max-width: 100%;
+    }
+}
