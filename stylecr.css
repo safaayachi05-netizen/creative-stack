@@ -217,43 +217,48 @@ h2{
     letter-spacing: 1px; 
 }
 /* هذا الكود سيطبق فقط على الشاشات الصغيرة */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     
-    /* 1. ضبط الـ Header والروابط */
-    nav ul {
-        display: flex !important;
-        flex-direction: column !important; /* ترتيب الروابط عمودياً */
-        padding: 0 !important;
-        text-align: center !important;
-    }
-
-    nav ul li {
-        margin: 5px 0 !important;
-    }
-
-    /* 2. ضبط قسم الخدمات (الصورة والنص) */
-    /* افترضت أن الكلاس المسؤول عن الحاوية هو شيء يشبه .service-box */
-    section, .container, div { 
-        display: block !important; /* إلغاء العرض الجانبي */
+    /* 1. إصلاح القائمة (Nav) */
+    nav {
+        position: relative !important; /* إلغاء التموضع المطلق */
+        left: 0 !important;
+        top: 0 !important;
+        transform: none !important;
         width: 100% !important;
-        padding: 10px !important;
+        text-align: center;
     }
 
-    img {
-        width: 100% !important; /* الصورة تأخذ عرض الشاشة */
-        max-width: 350px;
-        height: auto !important;
-        display: block !important;
-        margin: 0 auto 20px !important; /* تتوسط الشاشة */
+    nav ul {
+        flex-direction: column !important; /* ترتيب الروابط عمودياً */
+        gap: 15px !important;
+        padding: 20px 0 !important;
     }
 
-    /* 3. تصغير العناوين لتناسب الهاتف */
-    h1 {
-        font-size: 28px !important;
+    /* 2. إصلاح قسم الخدمات (Services) */
+    .services-block, 
+    .services-block-alt, 
+    .services-block-service {
+        flex-direction: column !important; /* جعل الصورة فوق النص */
+        gap: 20px !important;
+        margin-bottom: 40px !important;
+        text-align: center;
     }
-    
-    h2 {
-        font-size: 22px !important;
+
+    /* 3. إصلاح الصور لتأخذ العرض كاملاً */
+    .services-image {
+        max-width: 100% !important; /* بدلاً من 50% */
+        width: 100% !important;
+    }
+
+    .services-image img {
+        height: auto !important; /* لكي لا تظهر الصورة ممطوطة */
+        max-height: 300px;
+    }
+
+    /* 4. ضبط النصوص */
+    .services-container {
+        padding: 20px !important;
     }
 }
         height: auto;
