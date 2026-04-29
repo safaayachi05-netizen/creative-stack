@@ -11,35 +11,28 @@ body {
     font-family: Arial, sans-serif;
 }
 /*start header*/
-/* ========================================= */
-/* --- قسم الهيدر المعدل (START HEADER) --- */
-/* ========================================= */
-
 header {
-    min-height: 80vh; /* زيادة الطول قليلاً ليعطي مساحة مريحة على الهاتف */
-    background-color: rgb(0, 0, 0);
-    background: radial-gradient(circle at center, #2c2c2c 0%, #000 70%);
+    min-height: 60vh;
+    background: radial-gradient(circle at center,#2c2c2c 0%,#000 70%);
     color: white;
+    position: relative;
     display: flex;
-    flex-direction: column; /* ترتيب العناصر عمودياً (القائمة ثم المحتوى) */
-    align-items: center;    /* توسيط كل شيء أفقياً */
-    padding: 20px;          /* حشوة جانبية لمنع التصاق العناصر بالحافة */
-    position: relative;     /* للشعار في الأسفل */
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 5%;
+    overflow: hidden;
 }
-
-/* --- القائمة (Navigation) --- */
 nav {
-    /* تم إلغاء التموضع المطلق (absolute) لتجنب تداخل العناصر */
     width: 100%;
-    margin-bottom: 40px; /* مسافة بين القائمة ومحتوى الهيدر */
+    margin-bottom: 40px;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    justify-content: center; /* توسيط الروابط أفقياً */
-    flex-wrap: wrap;        /* السماح للروابط بالنزول لسطر جديد إذا كانت كثيرة */
-    gap: 15px;              /* تقليل المسافة بين الروابط لتناسب عرض الهاتف */
+    justify-content: center;
+    flex-wrap: wrap;        
+    gap: 15px;              
     padding: 0;
     margin: 0;
 }
@@ -48,22 +41,20 @@ nav ul li a {
     color: rgb(0, 196, 0);
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.9rem; /* تصغير الخط قليلاً ليناسب الهاتف */
+    font-size: 0.9rem; 
     transition: 0.3s;
 }
 
 nav ul li a:hover {
     text-decoration: underline;
 }
-
-/* --- محتوى الهيدر (Content) --- */
 .content {
     display: flex;
     flex-direction: column;
-    align-items: center; /* توسيط المحتوى أفقياً ليتناسب مع الصورة */
-    text-align: center;  /* توسيط النص */
+    align-items: center; 
+    text-align: center; 
     width: 100%;
-    max-width: 500px;    /* تحديد عرض أقصى للمحتوى لمنعه من التمدد الزائد */
+    max-width: 500px;  
     margin-top: 0;
     padding: 0;
 }
