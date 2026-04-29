@@ -251,15 +251,12 @@ h2{
 }
 
 /* --- جعل التصميم متجاوب مع الموبايل --- */
-@media (max-width: 768px) {
-    .services-block, 
-    .services-block-alt, 
-    .services-block-service {
-        flex-direction: column !important; /* الكل يصبح فوق بعض في الهاتف */
-        text-align: center;
+@media (max-width: 600px) {
+    .footer-icons {
+        gap: 30px; /* مسافة مناسبة لإصبع المستخدم */
     }
     
-    .services-image, .services-details {
-        max-width: 100%;
+    .footer-icons p {
+        margin-top: 10px; /* تقليل المسافة الكبيرة التي وضعتها سابقاً (50px) */
     }
 }
