@@ -252,12 +252,78 @@ h2{
 
 /* --- جعل التصميم متجاوب مع الموبايل --- */
 @media (max-width: 768px) {
-    
-    /* جعل القائمة العلوية تترتب عمودياً */
+    /* Header & Nav */
+    header {
+        justify-content: center;
+        text-align: center;
+        min-height: 50vh;
+    }
+
     nav {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
+        top: 10px;
+    }
+
+    nav ul {
+        gap: 15px; /* تقليل المسافة بين الروابط */
+        padding: 5px;
+    }
+
+    .content {
+        padding-left: 0;
+        margin-top: 80px;
+        text-align: center;
+    }
+
+    .footer-logo {
+        position: static; /* جعل الشعار يتبع التدفق الطبيعي أو تقليل حجمه */
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    /* Services Blocks */
+    .services-block, 
+    .services-block-alt, 
+    .services-block-service {
+        flex-direction: column !important; /* تحويل العناصر لتكون فوق بعضها */
+        text-align: center;
+        gap: 20px;
+    }
+
+    .services-image, 
+    .services-details {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .services-image img {
+        height: 250px; /* ارتفاع أصغر لصور الموبايل */
+    }
+
+    .services-details p {
+        font-size: 1rem;
+    }
+
+    /* Footer Icons */
+    .footer-icons {
+        gap: 15px;
+    }
+    
+    .icon-item p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
         gap: 10px;
     }
+    
+    nav ul li a {
+        font-size: 0.8rem;
+    }
+
+    .content h1 {
+        font-size: 22px;
+    }
+}
 
