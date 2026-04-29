@@ -11,34 +11,32 @@ body {
     font-family: Arial, sans-serif;
 }
 /*start header*/
+/* --- تعديلات الهيدر الأساسية (للكومبيوتر) --- */
 header {
     min-height: 60vh;
-    background-color: rgb(0, 0, 0);
+    background: radial-gradient(circle at center,#2c2c2c 0%,#000 70%);
     color: white;
-    background-size: cover;
-    background-position: center;
-    position: relative; /* ضروري لكي يعمل التموضع المطلق للـ nav */
+    position: relative;
     display: flex;
-    align-items: center; /* لتوسط المحتوى (content) عمودياً */
-    justify-content: flex-start; /* ليكون المحتوى جهة اليسار */
-        background: radial-gradient(circle at center,#2c2c2c 0%,#000 70%);
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 5%;
+    overflow: hidden;
 }
-
 nav {
     position: absolute;
-    top: 20px;          /* المسافة من الأعلى */
-    left: 20%;          /* تحريك بداية الـ nav لمنتصف الشاشة */
-    transform: translateX(-50%); /* إزاحة للوراء بنسبة 50% لضبط التوسط تماماً */
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 10;
+    width: auto;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 50px;
-    margin: 0; 
-    padding: 10px 25px;
-    border-radius: 20px; /* لمسة جمالية للقائمة البيضاء */
+    gap: 40px;
+    padding: 10px 20px;
 }
 
 nav ul li a {
@@ -250,80 +248,67 @@ h2{
     letter-spacing: 1px; /* يعطي جمالية للنص الإنجليزي */
 }
 
-/* --- جعل التصميم متجاوب مع الموبايل --- */
 @media (max-width: 768px) {
-    /* Header & Nav */
     header {
-        justify-content: center;
+        flex-direction: column; /* ترتيب العناصر عمودياً */
+        justify-content: center; /* توسيط المحتوى عمودياً */
+        align-items: center;     /* توسيط المحتوى أفقياً */
         text-align: center;
-        min-height: 50vh;
+        min-height: 70vh;        /* زيادة الارتفاع قليلاً لراحة العين */
+        padding: 20px;
     }
 
+    /* تحويل القائمة من مطلق إلى عادي لتأخذ مكانها الطبيعي */
     nav {
-        top: 10px;
-    }
-
-    nav ul {
-        gap: 15px; /* تقليل المسافة بين الروابط */
-        padding: 5px;
-    }
-
-    .content {
-        padding-left: 0;
-        margin-top: 80px;
-        text-align: center;
-    }
-
-    .footer-logo {
-        position: static; /* جعل الشعار يتبع التدفق الطبيعي أو تقليل حجمه */
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    /* Services Blocks */
-    .services-block, 
-    .services-block-alt, 
-    .services-block-service {
-        flex-direction: column !important; /* تحويل العناصر لتكون فوق بعضها */
-        text-align: center;
-        gap: 20px;
-    }
-
-    .services-image, 
-    .services-details {
-        max-width: 100%;
+        position: relative; 
+        top: 0;
+        left: 0;
+        transform: none;
+        margin-bottom: 40px; /* مسافة بين القائمة والعنوان */
         width: 100%;
     }
 
-    .services-image img {
-        height: 250px; /* ارتفاع أصغر لصور الموبايل */
-    }
-
-    .services-details p {
-        font-size: 1rem;
-    }
-
-    /* Footer Icons */
-    .footer-icons {
-        gap: 15px;
-    }
-    
-    .icon-item p {
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 480px) {
     nav ul {
-        gap: 10px;
+        gap: 15px; /* تقليل المسافة بين الروابط لتناسب عرض الشاشة */
+        justify-content: center;
+        flex-wrap: wrap; /* إذا كانت الروابط كثيرة تنزل لسطر جديد بدل الخروج عن الشاشة */
+        padding: 0;
     }
-    
+
     nav ul li a {
-        font-size: 0.8rem;
+        font-size: 14px; /* تصغير الخط قليلاً للموبايل */
+    }
+
+    .content {
+        margin-top: 0;
+        padding-left: 0; /* إلغاء الإزاحة اليسرى */
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .content h1 {
-        font-size: 22px;
+        font-size: 28px; /* حجم أصغر للعنوان */
+        margin-bottom: 15px;
     }
+
+    .content p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    /* الشعار في الأسفل */
+    .footer-logo {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        margin-top: 30px;
+    }
+
+    .footer-logo img {
+        height: 70px; /* تصغير الشعار ليناسب شاشة الهاتف */
+    }
+}
 }
 
