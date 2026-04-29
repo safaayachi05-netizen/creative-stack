@@ -11,82 +11,87 @@ body {
     font-family: Arial, sans-serif;
 }
 /*start header*/
-/* --- تعديلات الهيدر الأساسية (للكومبيوتر) --- */
+/* ========================================= */
+/* --- قسم الهيدر المعدل (START HEADER) --- */
+/* ========================================= */
+
 header {
-    min-height: 60vh;
-    background: radial-gradient(circle at center,#2c2c2c 0%,#000 70%);
+    min-height: 80vh; /* زيادة الطول قليلاً ليعطي مساحة مريحة على الهاتف */
+    background-color: rgb(0, 0, 0);
+    background: radial-gradient(circle at center, #2c2c2c 0%, #000 70%);
     color: white;
-    position: relative;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0 5%;
-    overflow: hidden;
+    flex-direction: column; /* ترتيب العناصر عمودياً (القائمة ثم المحتوى) */
+    align-items: center;    /* توسيط كل شيء أفقياً */
+    padding: 20px;          /* حشوة جانبية لمنع التصاق العناصر بالحافة */
+    position: relative;     /* للشعار في الأسفل */
 }
+
+/* --- القائمة (Navigation) --- */
 nav {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-    width: auto;
+    /* تم إلغاء التموضع المطلق (absolute) لتجنب تداخل العناصر */
+    width: 100%;
+    margin-bottom: 40px; /* مسافة بين القائمة ومحتوى الهيدر */
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 40px;
-    padding: 10px 20px;
+    justify-content: center; /* توسيط الروابط أفقياً */
+    flex-wrap: wrap;        /* السماح للروابط بالنزول لسطر جديد إذا كانت كثيرة */
+    gap: 15px;              /* تقليل المسافة بين الروابط لتناسب عرض الهاتف */
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li a {
     color: rgb(0, 196, 0);
     text-decoration: none;
     font-weight: bold;
+    font-size: 0.9rem; /* تصغير الخط قليلاً ليناسب الهاتف */
     transition: 0.3s;
 }
-nav ul :hover{
+
+nav ul li a:hover {
     text-decoration: underline;
 }
 
+/* --- محتوى الهيدر (Content) --- */
 .content {
-    margin-top: 40px;
-    position: relative;
-    z-index: 2;
-    text-align: left; /* المحتوى لليسار */
-    padding-left: 3%; /* لإعطاء مسافة عن حافة الشاشة اليسرى */
-    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* توسيط المحتوى أفقياً ليتناسب مع الصورة */
+    text-align: center;  /* توسيط النص */
+    width: 100%;
+    max-width: 500px;    /* تحديد عرض أقصى للمحتوى لمنعه من التمدد الزائد */
+    margin-top: 0;
+    padding: 0;
 }
 
 .content h1 {
-    font-size: 35px;
+    font-size: 28px; /* حجم خط مناسب للعنوان على الهاتف */
     margin-bottom: 20px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .content p {
     font-size: 15px;
+    line-height: 1.6; /* مسافة بين الأسطر لسهولة القراءة */
     margin-bottom: 30px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e0e0e0; /* لون أبيض مائل للرمادي ليكون أريح للعين */
 }
-.content .btn-project{
+
+.content .btn-project {
     display: inline-block;
-    color:  rgb(0, 196, 0);
+    color: rgb(0, 196, 0);
+    text-decoration: none;
+    font-weight: bold;
     transition: 0.3s;
 }
-.content .btn-project:hover{
-   color:rgb(0, 127, 0);
-}
-/* أضيفي هذا لضبط تموضع الشعار في الأسفل واليمين */
-.footer-logo {
-    position: absolute;
-    bottom: 8px; /* مسافة من الأسفل */
-    right: 2px;  /* مسافة من اليمين */
-}
-.footer-logo img {
-    height: 100px; /* ضبط ارتفاع الشعار ليناسب المساحة */
-    width: auto;
-    opacity: 0.8; /* جعل الشعار أكثر نعومة واندماجاً */
+
+.content .btn-project:hover {
+    color: rgb(0, 127, 0);
 }
 
 /* --- تنسيق عام لقسم الخدمات --- */
@@ -299,16 +304,17 @@ h2{
     }
 
     /* الشعار في الأسفل */
+    @media (max-width: 600px) {
     .footer-logo {
-        position: relative;
-        bottom: 0;
-        right: 0;
-        margin-top: 30px;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
     }
 
     .footer-logo img {
-        height: 70px; /* تصغير الشعار ليناسب شاشة الهاتف */
+        height: 60px; /* تصغير حجم الشعار ليناسب الهاتف */
+        width: auto;
+        opacity: 0.8;
     }
-}
 }
 
