@@ -216,3 +216,35 @@ h2{
     padding-top: 20px;
     letter-spacing: 1px; 
 }
+@media (max-width: 768px) {
+    /* تجعل القائمة (nav) تظهر بشكل طولي بدلاً من عرضي */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* ضبط النصوص لتناسب الشاشة الصغيرة */
+    h1 {
+        font-size: 24px; /* تصغير حجم العنوان الرئيسي */
+        text-align: center;
+    }
+
+    p {
+        font-size: 16px;
+        padding: 0 15px; /* ترك مسافة من الجوانب */
+        text-align: center;
+    }
+
+    /* ضبط قسم الخدمات (Services) */
+    .services-container { /* استبدل هذا الاسم باسم الكلاس الموجود عندك */
+        display: flex;
+        flex-direction: column; /* جعل الصور والنصوص تحت بعضها */
+        align-items: center;
+    }
+
+    img {
+        max-width: 90%; /* منع الصور من الخروج عن حدود الشاشة */
+        height: auto;
+    }
+}
