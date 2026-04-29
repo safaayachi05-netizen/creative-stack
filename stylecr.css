@@ -251,12 +251,49 @@ h2{
 }
 
 /* --- جعل التصميم متجاوب مع الموبايل --- */
-@media (max-width: 600px) {
-    .footer-icons {
-        gap: 30px; /* مسافة مناسبة لإصبع المستخدم */
+@media (max-width: 768px) {
+    
+    /* جعل القائمة العلوية تترتب عمودياً */
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    nav ul {
+        padding: 0;
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    /* تصغير حجم العناوين لتناسب الشاشة الصغيرة */
+    .content h1 {
+        font-size: 26px;
+    }
+
+    /* جعل الكروت (Projects) تأخذ العرض الكامل وتترتب فوق بعضها */
+    services-conainer {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    /* تعديل الـ Footer */
+    footer ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* للهواتف الصغيرة جداً (أقل من 480 بكسل) */
+@media (max-width: 480px) {
+    .content .btn-project {
+        padding: 10px 20px;
+        font-size: 14px;
     }
     
-    .footer-icons p {
-        margin-top: 10px; /* تقليل المسافة الكبيرة التي وضعتها سابقاً (50px) */
+    .container {
+        padding: 10px;
     }
 }
